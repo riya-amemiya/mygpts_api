@@ -6,7 +6,8 @@
 			"module",
 			"*.json",
 			"doc",
-			"coverage"
+			"coverage",
+			"dist"
 		]
 	},
 	"formatter": {
@@ -25,7 +26,10 @@
 			"beforeAll",
 			"afterEach",
 			"afterAll"
-		]
+		],
+		"parser": {
+			"unsafeParameterDecoratorsEnabled": true
+		}
 	},
 	"json": {
 		"formatter": {
@@ -81,7 +85,8 @@
 				},
 				"useShorthandArrayType": "error",
 				"useShorthandAssign": "error",
-				"useSingleCaseStatement": "error"
+				"useSingleCaseStatement": "error",
+				"useImportType": "off"
 			},
 			"suspicious": {
 				"noSkippedTests": "error"
