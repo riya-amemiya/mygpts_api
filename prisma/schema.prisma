@@ -1,0 +1,27 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model ZipCodeList {
+  id                                                    String  @id @default(cuid())
+  JIS_Code                                              String
+  Old_Postal_Code                                       String
+  Postal_Code                                           String
+  Prefecture_Name_Kana                                  String
+  City_Ward_Town_Village_Name_Kana                      String
+  Area_Name_Kana                                        String?
+  Prefecture_Name                                       String
+  City_Ward_Town_Village_Name                           String
+  Area_Name                                             String?
+  Indicates_More_Than_One_Postal_Code_for_the_Same_Area String
+  Indicates_a_Subarea_with_Numbered_Addresses           String
+  Indicates_Presence_of_Chome_in_the_Area               String
+  Indicates_One_Postal_Code_for_Multiple_Areas          String
+  Update_Display                                        String
+  Change_Reason                                         String
+}
