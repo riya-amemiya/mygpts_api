@@ -1,6 +1,6 @@
 import { Controller, Get, HttpStatus, Query } from "@nestjs/common";
 import { DateService } from "./date.service";
-import { ApiResponse } from "@nestjs/swagger";
+import { ApiOperation, ApiResponse } from "@nestjs/swagger";
 import { GetResponse } from "src/dto/response.dto";
 import { GetDateNowRequest } from "./date.dto";
 
@@ -9,10 +9,11 @@ export class DateController {
   constructor(private readonly dateService: DateService) {}
 
   @Get("/now")
+  @ApiOperation({ summary: "Get the current date and time" })
   @ApiResponse({
     status: HttpStatus.OK,
     type: GetResponse,
-    description: "Get the current date and time",
+    description: "Successfully retrieved the current date and time",
   })
   async now(
     @Query() { timeDifference }: GetDateNowRequest,
