@@ -10,6 +10,11 @@ async function bootstrap() {
     .setDescription("Description")
     .setVersion("1.0")
     .addTag("cats")
+    .addServer(
+      process.env.RAILWAY_PUBLIC_DOMAIN
+        ? `https://${process.env.RAILWAY_PUBLIC_DOMAIN}`
+        : "http://localhost:3000",
+    )
     .build();
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup("api", app, document);
