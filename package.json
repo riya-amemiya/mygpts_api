@@ -66,8 +66,5 @@
     ],
     "coverageDirectory": "../coverage",
     "testEnvironment": "node"
-  },
-  "prisma": {
-    "seed": "bun run prisma/seed.ts"
   }
 }
