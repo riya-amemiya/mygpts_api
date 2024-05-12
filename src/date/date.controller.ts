@@ -1,7 +1,7 @@
 import { Controller, Get, HttpStatus, Query } from "@nestjs/common";
 import { DateService } from "./date.service";
 import { ApiOperation, ApiResponse } from "@nestjs/swagger";
-import { GetResponse } from "src/dto/response.dto";
+import { GetResponse } from "@/dto/response.dto";
 import { GetDateNowRequest } from "./date.dto";
 
 @Controller("date")

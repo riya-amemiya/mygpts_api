@@ -1,6 +1,6 @@
 import { ApiProperty } from "@nestjs/swagger";
 
-export class GetResponse {
+export class GetResponse<T = string> {
   @ApiProperty()
-  message: string;
+  message: T;
 }
