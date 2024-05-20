@@ -12,10 +12,12 @@ async function bootstrap() {
     new FastifyAdapter(),
   );
   const config = new DocumentBuilder()
-    .setTitle("Title")
-    .setDescription("Description")
+    .setTitle("MyGPTs API")
+    .setDescription("The MyGPTs API is a simple API for managing GPTs.")
     .setVersion("1.0")
-    .addTag("cats")
+    .addTag("date")
+    .addTag("zip-code")
+    .addTag("string")
     .addServer(
       process.env.RAILWAY_PUBLIC_DOMAIN
         ? `https://${process.env.RAILWAY_PUBLIC_DOMAIN}`

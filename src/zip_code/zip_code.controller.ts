@@ -8,7 +8,10 @@ export class ZipCodeController {
   constructor(private readonly zipCodeService: ZipCodeService) {}
 
   @Get("/get-zip-codes")
-  @ApiOperation({ summary: "Get the current date and time" })
+  @ApiOperation({
+    summary: "Get the current date and time",
+    tags: ["zip-code"],
+  })
   @ApiResponse({
     status: HttpStatus.OK,
     type: GetZipCodesResponse,

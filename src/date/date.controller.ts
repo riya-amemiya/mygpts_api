@@ -9,7 +9,7 @@ export class DateController {
   constructor(private readonly dateService: DateService) {}
 
   @Get("/now")
-  @ApiOperation({ summary: "Get the current date and time" })
+  @ApiOperation({ summary: "Get the current date and time", tags: ["date"] })
   @ApiResponse({
     status: HttpStatus.OK,
     type: GetDateNowResponse,
@@ -22,7 +22,7 @@ export class DateController {
   }
 
   @Get("/format")
-  @ApiOperation({ summary: "Format a date" })
+  @ApiOperation({ summary: "Format a date", tags: ["date"] })
   @ApiResponse({
     status: HttpStatus.OK,
     type: String,

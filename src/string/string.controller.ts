@@ -27,7 +27,7 @@ export class StringController {
   constructor(private readonly stringService: StringService) {}
 
   @Get("/reverse")
-  @ApiOperation({ summary: "Reverse a string" })
+  @ApiOperation({ summary: "Reverse a string", tags: ["string"] })
   @ApiResponse({
     status: HttpStatus.OK,
     type: GetStringReverseResponse,
@@ -40,7 +40,7 @@ export class StringController {
   }
 
   @Get("/uppercase")
-  @ApiOperation({ summary: "Convert a string to uppercase" })
+  @ApiOperation({ summary: "Convert a string to uppercase", tags: ["string"] })
   @ApiResponse({
     status: HttpStatus.OK,
     type: GetStringToUpperCaseResponse,
@@ -53,7 +53,7 @@ export class StringController {
   }
 
   @Get("/lowercase")
-  @ApiOperation({ summary: "Convert a string to lowercase" })
+  @ApiOperation({ summary: "Convert a string to lowercase", tags: ["string"] })
   @ApiResponse({
     status: HttpStatus.OK,
     type: GetStringToLowerCaseResponse,
@@ -66,7 +66,7 @@ export class StringController {
   }
 
   @Get("/titlecase")
-  @ApiOperation({ summary: "Convert a string to title case" })
+  @ApiOperation({ summary: "Convert a string to title case", tags: ["string"] })
   @ApiResponse({
     status: HttpStatus.OK,
     type: GetStringToTitleCaseResponse,
@@ -79,7 +79,7 @@ export class StringController {
   }
 
   @Get("/capitalize")
-  @ApiOperation({ summary: "Capitalize a string" })
+  @ApiOperation({ summary: "Capitalize a string", tags: ["string"] })
   @ApiResponse({
     status: HttpStatus.OK,
     type: GetStringCapitalizeResponse,
