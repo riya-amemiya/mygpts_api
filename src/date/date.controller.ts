@@ -1,7 +1,8 @@
 import { Controller, Get, HttpStatus, Query } from "@nestjs/common";
 import { DateService } from "./date.service";
 import { ApiOperation, ApiResponse } from "@nestjs/swagger";
-import { GetDateNowRequest, GetDateNowResponse } from "./date.dto";
+import { GetDateNowResponse, GetDateNowRequest } from "./dto/now.dto";
+import { GetDateFormatRequest, GetDateFormatResponse } from "./dto/format.dto";
 
 @Controller("date")
 export class DateController {
@@ -18,5 +19,20 @@ export class DateController {
     @Query() { timeDifference }: GetDateNowRequest,
   ): Promise<GetDateNowResponse> {
     return { message: await this.dateService.now(timeDifference) };
+  }
+
+  @Get("/format")
+  @ApiOperation({ summary: "Format a date" })
+  @ApiResponse({
+    status: HttpStatus.OK,
+    type: String,
+    description: "Successfully formatted the date",
+  })
+  async format(
+    @Query() { date, formatString, locale }: GetDateFormatRequest,
+  ): Promise<GetDateFormatResponse> {
+    return {
+      message: await this.dateService.format(date, formatString, locale),
+    };
   }
 }
