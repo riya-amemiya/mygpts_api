@@ -52,19 +52,23 @@
 				"useSimplifiedLogicExpression": "error"
 			},
 			"correctness": {
+				"noConstantMathMinMaxClamp": "error",
 				"noUndeclaredVariables": "warn",
 				"noUnusedVariables": "warn",
 				"useExhaustiveDependencies": "warn",
 				"useHookAtTopLevel": "error"
 			},
 			"nursery": {
-				"noConstantMathMinMaxClamp": "error",
 				"noDoneCallback": "error",
 				"noDuplicateElseIf": "error",
 				"noDuplicateJsonKeys": "error",
-				"noEvolvingAny": "error",
-				"noFlatMapIdentity": "error",
-				"noMisplacedAssertion": "error"
+				"noEvolvingTypes": "error",
+				"noMisplacedAssertion": "error",
+				"noUnknownFunction": "error",
+				"noUnknownProperty": "error",
+				"noUnknownSelectorPseudoElement": "error",
+				"noUnknownUnit": "error",
+				"useTopLevelRegex": "error"
 			},
 			"recommended": true,
 			"style": {
@@ -76,6 +80,7 @@
 				"noShoutyConstants": "warn",
 				"useBlockStatements": "error",
 				"useFragmentSyntax": "error",
+				"useImportType": "off",
 				"useNamingConvention": {
 					"level": "off",
 					"options": {
@@ -85,8 +90,7 @@
 				},
 				"useShorthandArrayType": "error",
 				"useShorthandAssign": "error",
-				"useSingleCaseStatement": "error",
-				"useImportType": "off"
+				"useSingleCaseStatement": "error"
 			},
 			"suspicious": {
 				"noSkippedTests": "error"
