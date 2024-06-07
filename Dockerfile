@@ -22,6 +22,12 @@ FROM node:18-alpine AS production
 # Node.jsの本番環境変数の設定
 ENV NODE_ENV production
 
+# ビルド時の環境変数の宣言
+ARG DATABASE_URL
+
+# ビルド時の環境変数を実行時の環境変数として設定
+ENV DATABASE_URL $DATABASE_URL
+
 # 作業ディレクトリの作成
 WORKDIR /app
 
