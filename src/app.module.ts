@@ -6,6 +6,7 @@ import { ZipCodeModule } from "./zip_code/zip_code.module";
 import { StringModule } from "./string/string.module";
 import { SharedModule } from "./modules/shared.module";
 import { CobaltModule } from "./cobalt/cobalt.module";
+import { UuidModule } from './uuid/uuid.module';
 
 @Module({
   imports: [
@@ -14,6 +15,7 @@ import { CobaltModule } from "./cobalt/cobalt.module";
     StringModule,
     SharedModule,
     CobaltModule,
+    UuidModule,
   ],
   controllers: [AppController],
   providers: [AppService],
