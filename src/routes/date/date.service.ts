@@ -15,7 +15,7 @@ export class DateService {
     locale: "ja" | "en" = "ja",
   ): Promise<string> {
     return format(date, formatString, {
-      locale: locale === "ja" ? ja : (locale === "en" ? enUS : undefined),
+      locale: locale === "ja" ? ja : locale === "en" ? enUS : undefined,
     });
   }
 }

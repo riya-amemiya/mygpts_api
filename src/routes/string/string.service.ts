@@ -3,7 +3,7 @@ import { Injectable } from "@nestjs/common";
 @Injectable()
 export class StringService {
   async reverseString(string_: string): Promise<string> {
-    return string_.split("").reverse().join("");
+    return [...string_].reverse().join("");
   }
 
   async toUpperCase(string_: string): Promise<string> {

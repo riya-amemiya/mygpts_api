@@ -1,12 +1,13 @@
 import { Module } from "@nestjs/common";
+
 import { AppController } from "./app.controller";
 import { AppService } from "./app.service";
-import { DateModule } from "./date/date.module";
-import { ZipCodeModule } from "./zip_code/zip_code.module";
-import { StringModule } from "./string/string.module";
 import { SharedModule } from "./modules/shared.module";
-import { CobaltModule } from "./cobalt/cobalt.module";
-import { UuidModule } from './uuid/uuid.module';
+import { CobaltModule } from "./routes/cobalt/cobalt.module";
+import { DateModule } from "./routes/date/date.module";
+import { StringModule } from "./routes/string/string.module";
+import { UuidModule } from "./routes/uuid/uuid.module";
+import { ZipCodeModule } from "./routes/zip_code/zip_code.module";
 
 @Module({
   imports: [

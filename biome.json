@@ -25,7 +25,8 @@
 			"test",
 			"beforeAll",
 			"afterEach",
-			"afterAll"
+			"afterAll",
+			"jest"
 		],
 		"parser": {
 			"unsafeParameterDecoratorsEnabled": true
