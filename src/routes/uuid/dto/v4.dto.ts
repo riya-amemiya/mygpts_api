@@ -1,14 +1,4 @@
 import { ApiProperty } from "@nestjs/swagger";
-import { V4Options } from "uuid";
-
-export class GetV4UuidRequest {
-  @ApiProperty({
-    required: false,
-    type: "object",
-    description: "V4Options object",
-  })
-  options?: V4Options;
-}
 
 export class GetV4UuidResponse {
   @ApiProperty({

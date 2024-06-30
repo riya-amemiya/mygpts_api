@@ -1,10 +1,10 @@
 import { Controller, Get, HttpStatus, Query } from "@nestjs/common";
 import { ApiOperation, ApiResponse, ApiQuery } from "@nestjs/swagger";
 
-import { GetV1UuidRequest, GetV1UuidResponse } from "./dto/v1.dto";
-import { GetV4UuidRequest, GetV4UuidResponse } from "./dto/v4.dto";
-import { GetV6UuidRequest, GetV6UuidResponse } from "./dto/v6.dto";
-import { GetV7UuidRequest, GetV7UuidResponse } from "./dto/v7.dto";
+import { GetV1UuidResponse } from "./dto/v1.dto";
+import { GetV4UuidResponse } from "./dto/v4.dto";
+import { GetV6UuidResponse } from "./dto/v6.dto";
+import { GetV7UuidResponse } from "./dto/v7.dto";
 import {
   GetValidateUuidRequest,
   GetValidateUuidResponse,
@@ -26,9 +26,8 @@ export class UuidController {
     description: "UUID v1 generated successfully",
     type: GetV1UuidResponse,
   })
-  @ApiQuery({ type: GetV1UuidRequest })
-  async v1(@Query() { options }: GetV1UuidRequest): Promise<GetV1UuidResponse> {
-    return { message: await this.uuidService.v1(options) };
+  async v1(): Promise<GetV1UuidResponse> {
+    return { message: await this.uuidService.v1() };
   }
 
   @Get("/v4")
@@ -38,9 +37,8 @@ export class UuidController {
     description: "UUID v4 generated successfully",
     type: GetV4UuidResponse,
   })
-  @ApiQuery({ type: GetV4UuidRequest })
-  async v4(@Query() { options }: GetV4UuidRequest): Promise<GetV4UuidResponse> {
-    return { message: await this.uuidService.v4(options) };
+  async v4(): Promise<GetV4UuidResponse> {
+    return { message: await this.uuidService.v4() };
   }
 
   @Get("/v6")
@@ -50,9 +48,8 @@ export class UuidController {
     description: "UUID v6 generated successfully",
     type: GetV6UuidResponse,
   })
-  @ApiQuery({ type: GetV6UuidRequest })
-  async v6(@Query() { options }: GetV6UuidRequest): Promise<GetV6UuidResponse> {
-    return { message: await this.uuidService.v6(options) };
+  async v6(): Promise<GetV6UuidResponse> {
+    return { message: await this.uuidService.v6() };
   }
 
   @Get("/v7")
@@ -62,9 +59,8 @@ export class UuidController {
     description: "UUID v7 generated successfully",
     type: GetV7UuidResponse,
   })
-  @ApiQuery({ type: GetV7UuidRequest })
-  async v7(@Query() { options }: GetV7UuidRequest): Promise<GetV7UuidResponse> {
-    return { message: await this.uuidService.v7(options) };
+  async v7(): Promise<GetV7UuidResponse> {
+    return { message: await this.uuidService.v7() };
   }
 
   @Get("/version")
