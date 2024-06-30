@@ -12,6 +12,10 @@ async function bootstrap() {
     AppModule,
     new FastifyAdapter(),
   );
+  app.enableCors({
+    origin: process.env.NODE_ENV === "production" ? true : "*",
+    methods: ["GET", "POST"],
+  });
   const config = new DocumentBuilder()
     .setTitle("MyGPTs API")
     .setDescription("The MyGPTs API is a simple API for managing GPTs.")
