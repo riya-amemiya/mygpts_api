@@ -1,11 +1,12 @@
 // eslint.config.js
-import { FlatCompat } from "@eslint/eslintrc";
-import typescriptParser from "@typescript-eslint/parser";
-import typescriptPlugin from "@typescript-eslint/eslint-plugin";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import unicornPlugin from "eslint-plugin-unicorn";
+
+import { FlatCompat } from "@eslint/eslintrc";
+import typescriptPlugin from "@typescript-eslint/eslint-plugin";
+import typescriptParser from "@typescript-eslint/parser";
 import importPlugin from "eslint-plugin-import";
+import unicornPlugin from "eslint-plugin-unicorn";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -41,6 +42,8 @@ export default [
       "@typescript-eslint/no-explicit-any": "off",
       "unicorn/prefer-top-level-await": "off",
       "unicorn/filename-case": "off",
+      "unicorn/number-literal-case": "off",
+      "unicorn/no-nested-ternary": "off",
       "import/order": [
         "error",
         {
