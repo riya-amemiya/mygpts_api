@@ -1,20 +1,19 @@
 import { Test, TestingModule } from "@nestjs/testing";
-import { DateController } from "./date.controller";
+
 import { DateService } from "./date.service";
 
-describe("DateController", () => {
-  let controller: DateController;
+describe("DateService", () => {
+  let service: DateService;
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
-      controllers: [DateController],
       providers: [DateService],
     }).compile();
 
-    controller = module.get<DateController>(DateController);
+    service = module.get<DateService>(DateService);
   });
 
   it("should be defined", () => {
-    expect(controller).toBeDefined();
+    expect(service).toBeDefined();
   });
 });

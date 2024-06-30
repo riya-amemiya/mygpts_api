@@ -1,11 +1,12 @@
-import { Injectable } from "@nestjs/common";
 import { HttpService } from "@nestjs/axios";
+import { Injectable } from "@nestjs/common";
 import { firstValueFrom } from "rxjs";
-import { GetCobaltServerInfoResponse } from "./dto/getServerInfo.dto";
+
 import {
   PostCobaltDownloadRequest,
   PostCobaltDownloadResponse,
 } from "./dto/download.dto";
+import { GetCobaltServerInfoResponse } from "./dto/getServerInfo.dto";
 
 @Injectable()
 export class CobaltService {

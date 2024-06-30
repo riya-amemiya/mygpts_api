@@ -1,8 +1,9 @@
 import { Controller, Get, HttpStatus, Query } from "@nestjs/common";
-import { UuidService } from "./uuid.service";
 import { ApiOperation, ApiResponse } from "@nestjs/swagger";
-import { GetUuidV7Response } from "./dto/v7.dto";
+
 import { GetUuidV4Response } from "./dto/v4.dto";
+import { GetUuidV7Response } from "./dto/v7.dto";
+import { UuidService } from "./uuid.service";
 
 @Controller("uuid")
 export class UuidController {

@@ -1,14 +1,14 @@
 import { Controller, Get, HttpStatus, Query } from "@nestjs/common";
 import { ApiOperation, ApiResponse } from "@nestjs/swagger";
+
+import {
+  GetStringCapitalizeResponse,
+  GetStringCapitalizeRequest,
+} from "./dto/capitalize.dto";
 import {
   GetStringReverseRequest,
   GetStringReverseResponse,
 } from "./dto/reverse.dto";
-import { StringService } from "./string.service";
-import {
-  GetStringToUpperCaseRequest,
-  GetStringToUpperCaseResponse,
-} from "./dto/toUpperCase.dto";
 import {
   GetStringToLowerCaseResponse,
   GetStringToLowerCaseRequest,
@@ -18,9 +18,10 @@ import {
   GetStringToTitleCaseResponse,
 } from "./dto/toTitleCase.dto";
 import {
-  GetStringCapitalizeResponse,
-  GetStringCapitalizeRequest,
-} from "./dto/capitalize.dto";
+  GetStringToUpperCaseRequest,
+  GetStringToUpperCaseResponse,
+} from "./dto/toUpperCase.dto";
+import { StringService } from "./string.service";
 
 @Controller("string")
 export class StringController {

@@ -1,20 +1,23 @@
-import { Test, TestingModule } from "@nestjs/testing";
-import { CobaltService } from "./cobalt.service";
 import { HttpModule } from "@nestjs/axios";
+import { Test, TestingModule } from "@nestjs/testing";
 
-describe("CobaltService", () => {
-  let service: CobaltService;
+import { CobaltController } from "./cobalt.controller";
+import { CobaltService } from "./cobalt.service";
+
+describe("CobaltController", () => {
+  let controller: CobaltController;
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
       imports: [HttpModule],
+      controllers: [CobaltController],
       providers: [CobaltService],
     }).compile();
 
-    service = module.get<CobaltService>(CobaltService);
+    controller = module.get<CobaltController>(CobaltController);
   });
 
   it("should be defined", () => {
-    expect(service).toBeDefined();
+    expect(controller).toBeDefined();
   });
 });

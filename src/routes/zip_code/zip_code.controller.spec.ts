@@ -1,20 +1,24 @@
 import { Test, TestingModule } from "@nestjs/testing";
+
+import { ZipCodeController } from "./zip_code.controller";
 import { ZipCodeService } from "./zip_code.service";
+
 import { SharedModule } from "@/modules/shared.module";
 
-describe("ZipCodeService", () => {
-  let service: ZipCodeService;
+describe("ZipCodeController", () => {
+  let controller: ZipCodeController;
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
       imports: [SharedModule],
+      controllers: [ZipCodeController],
       providers: [ZipCodeService],
     }).compile();
 
-    service = module.get<ZipCodeService>(ZipCodeService);
+    controller = module.get<ZipCodeController>(ZipCodeController);
   });
 
   it("should be defined", () => {
-    expect(service).toBeDefined();
+    expect(controller).toBeDefined();
   });
 });

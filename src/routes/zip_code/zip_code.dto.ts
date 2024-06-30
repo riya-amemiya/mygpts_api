@@ -11,7 +11,7 @@ export class GetZipCodesResponse {
     example: {
       message: [
         {
-          id: 40364,
+          id: 40_364,
           JIS_Code: "13113",
           Old_Postal_Code: '"150  "',
           Postal_Code: "1500002",

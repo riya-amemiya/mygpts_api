@@ -1,7 +1,8 @@
 import { Controller, Get, HttpStatus, Query } from "@nestjs/common";
-import { ZipCodeService } from "./zip_code.service";
-import { GetZipCodesRequest, GetZipCodesResponse } from "./zip_code.dto";
 import { ApiOperation, ApiResponse } from "@nestjs/swagger";
+
+import { GetZipCodesRequest, GetZipCodesResponse } from "./zip_code.dto";
+import { ZipCodeService } from "./zip_code.service";
 
 @Controller("zip-code")
 export class ZipCodeController {

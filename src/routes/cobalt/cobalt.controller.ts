@@ -1,6 +1,7 @@
 import { Controller, Post, Body, Get } from "@nestjs/common";
-import { CobaltService } from "./cobalt.service";
 import { ApiOperation, ApiResponse } from "@nestjs/swagger";
+
+import { CobaltService } from "./cobalt.service";
 import {
   PostCobaltDownloadRequest,
   PostCobaltDownloadResponse,

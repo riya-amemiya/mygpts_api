@@ -1,6 +1,7 @@
 import { Injectable } from "@nestjs/common";
-import { PrismaService } from "@/modules/prisma/prisma.service";
 import { ZipCodeList } from "@prisma/client";
+
+import { PrismaService } from "@/modules/prisma/prisma.service";
 
 @Injectable()
 export class ZipCodeService {
