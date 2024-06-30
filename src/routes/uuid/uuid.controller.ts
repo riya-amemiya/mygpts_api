@@ -27,8 +27,8 @@ export class UuidController {
     type: GetV1UuidResponse,
   })
   @ApiQuery({ type: GetV1UuidRequest })
-  async v1(@Query() query: GetV1UuidRequest): Promise<GetV1UuidResponse> {
-    return { message: await this.uuidService.v1(query.options) };
+  async v1(@Query() { options }: GetV1UuidRequest): Promise<GetV1UuidResponse> {
+    return { message: await this.uuidService.v1(options) };
   }
 
   @Get("/v4")
@@ -39,8 +39,8 @@ export class UuidController {
     type: GetV4UuidResponse,
   })
   @ApiQuery({ type: GetV4UuidRequest })
-  async v4(@Query() query: GetV4UuidRequest): Promise<GetV4UuidResponse> {
-    return { message: await this.uuidService.v4(query.options) };
+  async v4(@Query() { options }: GetV4UuidRequest): Promise<GetV4UuidResponse> {
+    return { message: await this.uuidService.v4(options) };
   }
 
   @Get("/v6")
@@ -51,8 +51,8 @@ export class UuidController {
     type: GetV6UuidResponse,
   })
   @ApiQuery({ type: GetV6UuidRequest })
-  async v6(@Query() query: GetV6UuidRequest): Promise<GetV6UuidResponse> {
-    return { message: await this.uuidService.v6(query.options) };
+  async v6(@Query() { options }: GetV6UuidRequest): Promise<GetV6UuidResponse> {
+    return { message: await this.uuidService.v6(options) };
   }
 
   @Get("/v7")
@@ -63,8 +63,8 @@ export class UuidController {
     type: GetV7UuidResponse,
   })
   @ApiQuery({ type: GetV7UuidRequest })
-  async v7(@Query() query: GetV7UuidRequest): Promise<GetV7UuidResponse> {
-    return { message: await this.uuidService.v7(query.options) };
+  async v7(@Query() { options }: GetV7UuidRequest): Promise<GetV7UuidResponse> {
+    return { message: await this.uuidService.v7(options) };
   }
 
   @Get("/version")
