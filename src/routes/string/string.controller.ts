@@ -6,6 +6,10 @@ import {
   GetStringCapitalizeRequest,
 } from "./dto/capitalize.dto";
 import {
+  GetStringRandomStringRequest,
+  GetStringRandomStringResponse,
+} from "./dto/randomString.dto";
+import {
   GetStringReverseRequest,
   GetStringReverseResponse,
 } from "./dto/reverse.dto";
@@ -90,5 +94,18 @@ export class StringController {
     @Query() { str }: GetStringCapitalizeRequest,
   ): Promise<GetStringCapitalizeResponse> {
     return { message: await this.stringService.capitalize(str) };
+  }
+
+  @Get("/random")
+  @ApiOperation({ summary: "Generate a random string", tags: ["string"] })
+  @ApiResponse({
+    status: HttpStatus.OK,
+    type: GetStringRandomStringResponse,
+    description: "Successfully generated a random string",
+  })
+  async randomString(
+    @Query() { size, char }: GetStringRandomStringRequest,
+  ): Promise<GetStringRandomStringResponse> {
+    return { message: await this.stringService.randomString(size, char) };
   }
 }
