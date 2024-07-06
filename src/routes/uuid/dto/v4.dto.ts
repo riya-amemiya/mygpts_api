@@ -7,4 +7,11 @@ export class GetV4UuidResponse {
     description: "Generated UUID v4",
   })
   message: string;
+
+  @ApiProperty({
+    type: String,
+    example: "v4",
+    description: "UUID version",
+  })
+  version: "v4";
 }

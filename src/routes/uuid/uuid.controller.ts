@@ -27,7 +27,10 @@ export class UuidController {
     type: GetV1UuidResponse,
   })
   async v1(): Promise<GetV1UuidResponse> {
-    return { message: await this.uuidService.v1() };
+    return {
+      message: await this.uuidService.v1(),
+      version: "v1",
+    };
   }
 
   @Get("/v4")
@@ -38,7 +41,10 @@ export class UuidController {
     type: GetV4UuidResponse,
   })
   async v4(): Promise<GetV4UuidResponse> {
-    return { message: await this.uuidService.v4() };
+    return {
+      message: await this.uuidService.v4(),
+      version: "v4",
+    };
   }
 
   @Get("/v6")
@@ -49,7 +55,10 @@ export class UuidController {
     type: GetV6UuidResponse,
   })
   async v6(): Promise<GetV6UuidResponse> {
-    return { message: await this.uuidService.v6() };
+    return {
+      message: await this.uuidService.v6(),
+      version: "v6",
+    };
   }
 
   @Get("/v7")
@@ -60,7 +69,10 @@ export class UuidController {
     type: GetV7UuidResponse,
   })
   async v7(): Promise<GetV7UuidResponse> {
-    return { message: await this.uuidService.v7() };
+    return {
+      message: await this.uuidService.v7(),
+      version: "v7",
+    };
   }
 
   @Get("/version")
